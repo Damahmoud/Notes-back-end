@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('comm')%>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="add">
+            <div>
+                <form action="/data" method="post">
+                    <div class="sub">
+                        <div class="tit">
+                            <label for="title">Enter the name of the note</label>
+                            <input type="text" name="title" id="title" placeholder="go to.." required>
+                            <h5 id="show">You have to type a name</h5>
+                        </div>
+                        <div class="btn">
+                            <div class="ac">
+                                <button type="submit" id="saveBtn"><h3>Click to save the note</h3></button>
+                            </div>
+                        </div>
+                    </div>
+                    <textarea id="TheNote" name="body" placeholder="I have to b..." required></textarea>
+                </form>
+                
+            </div>
+        </div>
+        
+        <div class="lin">
+            <a href="notes">Go to notes page</a>
+        </div>
+    </div>
+    
+    <script>
+        function chk() {
+            const title = document.getElementById('tit');
+            const err = document.getElementById('show');
+            if (title.value.length === 0) {
+                err.style.display = 'block';
+                return false;
+            }
+            err.style.display = 'none';
+            return true;
+        }
+    </script>
+</body>
+</html>
